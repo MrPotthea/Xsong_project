@@ -1,0 +1,464 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000;
+  border-bottom: 1px solid #222;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.menu-items {
+  display: flex;
+  gap: 50px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-items li a:hover {
+  color: #aaa;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.user {
+  display: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .menu-items {
+    width: 30%;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    right: 0px;
+    background-color: #000;
+    padding: 20px;
+    border: 1px solid #222;
+    border-radius: 8px;
+    z-index: 2;
+  }
+
+  .menu-items.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .user-actions {
+    display: none;
+  }
+
+  .user {
+    display: flex;
+  }
+}
+
+.playmusic {
+  padding: 20px;
+  display: none;
+}
+
+.img_song {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img_song img {
+  width: 50%;
+  max-width: 250px;
+  padding: 5px;
+  background-color: #1dd1a1;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  animation: spin 10s linear infinite;
+  /* Added animation */
+}
+
+/* Define the spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.active_music {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress-bar .progress {
+  width: 0;
+  height: 100%;
+  background-color: #1dd1a1;
+  transition: width 0.3s;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: #1dd1a1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .img_song img {
+    width: 70%;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
+}
+.search_music {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Added gap for better spacing between items */
+}
+
+.search {
+  width: 30%;
+  display: flex;
+  background-color: #1dd1a1;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px; /* Optional: Add some rounded corners */
+  overflow: hidden; /* To ensure the input and icon do not overflow */
+}
+
+.search input {
+  width: 90%;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+
+.search i {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Icon color */
+}
+
+.list_category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-start; /* Adjust alignment */
+}
+
+.list_category a {
+  text-decoration: none;
+  color: aliceblue;
+  list-style: none;
+  padding: 0px 15px;
+  border: 1px solid rgb(163, 158, 158);
+  border-radius: 5px; /* Rounded borders for better design */
+  transition: background-color 0.3s ease;
+}
+
+.list_category a:hover {
+  background-color: rgb(85, 88, 91);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  .list_category a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .search {
+    width: 40%; /* Adjusted width for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .list_category a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .search {
+    width: 45%; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .list_category a {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .search {
+    width: 100%; /* Adjust search width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .list_category {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list_category a {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .search {
+    width: 100%; /* Larger width for search on mobile */
+  }
+}
+
+/* Store Music Container */
+.store_music {
+  margin-top: 15px;
+}
+
+/* Store Music Link */
+.store_music a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  color: aliceblue;
+  text-decoration: none;
+  border: 1px solid gainsboro;
+  gap: 10px; /* Space between elements */
+}
+
+/* Image Styling */
+.store_music a img {
+  width: 100px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #1dd1a1;
+  flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+/* Text Container Styling */
+.store_music a div {
+  flex: 1; /* Allow the text container to grow and fill available space */
+  overflow: hidden;
+}
+
+/* Title Styling (h6) */
+.store_music a div h6 {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflow */
+  margin: 0;
+}
+
+/* Subtitle Styling (p) */
+.store_music a div p {
+  font-size: 12px;
+  margin: 0;
+  color: #ccc; /* Optional: Adjust text color for better contrast */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflow */
+}
+
+/* Time Styling */
+.store_music a .time_music {
+  color: #ccc; /* Optional: Adjust text color for better contrast */
+  white-space: nowrap; /* Prevent text wrapping */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+@media (max-width: 768px) {
+  .store_music a {
+    padding: 5px;
+  }
+  /* Image Styling */
+.store_music a img {
+  width: 80px;
+  
+}
+}
+
+@media (max-width: 576px) {
+  .store_music a {
+    padding: 5px;
+  }
+   /* Image Styling */
+.store_music a img {
+  width: 60px;
+  
+}
+}
+.change_page span,i{
+ cursor: pointer;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c2c54;
+  color: #fff;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  margin: 10px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #1dd1a1;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscribe-form input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #1dd1a1;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #10ac84;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+  }
+}
