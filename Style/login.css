@@ -172,82 +172,121 @@
     }
 }
 
+/* Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #2c2c54;
+  color: #fff;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  margin: 10px;
+}
+
+.footer-section h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #1dd1a1;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscribe-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+  max-width: 250px;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #1dd1a1;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #10ac84;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2c2c54;
-    color: #fff;
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
-    text-align: center;
-    margin: 10px;
-  }
-  
-  .footer-section h2,
-  .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  
-  .contact-info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-  }
-  
-  .social-icons a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #1dd1a1;
-  }
-  
-  .subscribe-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .subscribe-form input {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .subscribe-form button {
-    padding: 8px 15px;
-    border: none;
-    background-color: #1dd1a1;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .subscribe-form button:hover {
-    background-color: #10ac84;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .footer {
       flex-direction: column;
+      align-items: center;
       text-align: center;
-    }
-  
-    .footer-section {
-      margin: 20px 0;
-    }
+      gap: 30px;
   }
+
+  .footer-section {
+      margin: 20px 0;
+  }
+
+  .subscribe-form input {
+      width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section h1 {
+      font-size: 1.5rem;
+  }
+
+  .footer-section h3 {
+      font-size: 1.2rem;
+  }
+
+  .social-icons a {
+      font-size: 1.2rem;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+      width: 100%;
+  }
+}
